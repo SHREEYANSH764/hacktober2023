@@ -1,0 +1,16 @@
+def compound_interest_with_varied_rates(principal, rates, periods):
+    total_amount = principal
+    
+    for i in range(len(rates)):
+        rate = rates[i] / 100  # convert percentage to decimal
+        total_amount *= (1 + rate) ** periods[i]
+    
+    return total_amount
+
+# Example
+principal_amount = 1000  # initial principal amount
+interest_rates = [5, 8, 6]  # interest rates for different periods (in percentage)
+time_periods = [2, 3, 5]  # time periods corresponding to interest rates (in years)
+
+result = compound_interest_with_varied_rates(principal_amount, interest_rates, time_periods)
+print("Total amount after compound interest:", round(result, 2))
